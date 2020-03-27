@@ -1,5 +1,5 @@
 var albums = [];
-
+  
 
     function createAlbum(){
 
@@ -17,7 +17,7 @@ var albums = [];
         "release": r
       }
 
-
+      
       albums.push(add);
       console.log(albums);
       localStorage.setItem("myAlbums",JSON.stringify(albums));
@@ -51,7 +51,7 @@ var albums = [];
         "release": r
       }
 
-
+      
       albums.push(add);
       console.log(albums);
       localStorage.setItem("myAlbums",JSON.stringify(albums));
@@ -59,10 +59,14 @@ var albums = [];
 
     function ret() {
       albums = JSON.parse(localStorage.getItem("myAlbums"));
-
+      
       for(var i = 0;i<albums.length;i++){
 
         document.write(JSON.stringify(albums[i],null,2));
         document.write("<br><br>");
       }
+<<<<<<< HEAD
     }
+=======
+    }
+>>>>>>> parent of dc05966... Move from Mychart to Jaavascript.js
