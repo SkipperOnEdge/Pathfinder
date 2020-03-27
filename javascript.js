@@ -3,6 +3,8 @@ var albums = [];
 
     function createAlbum(){
 
+      albums = JSON.parse(localStorage.getItem("myAlbums"));
+
         var a = document.getElementById("album").value;
         var art = document.getElementById("artist").value;
         var gen = document.getElementById("genre").value;
