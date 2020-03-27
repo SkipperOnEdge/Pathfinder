@@ -1,20 +1,23 @@
 var albums = [];
   
-
     function createAlbum(){
 
       albums = JSON.parse(localStorage.getItem("myAlbums"));
 
-        var a = document.getElementById("album").value;
-        var art = document.getElementById("artist").value;
-        var gen = document.getElementById("genre").value;
-        var r = document.getElementById("release").value;
+        var a = document.getElementById("team").value;
+        var art = document.getElementById("win").value;
+        var gen = document.getElementById("loss").value;
+        var r = document.getElementById("OR").value;
+        var e = document.getElementById("DR").value;
+        var d = document.getElementById("shoot").value;
 
       var add = {
-        "album": a,
-        "artist": art,
-        "genre": gen,
-        "release": r
+        "team": a,
+        "wins": art,
+        "losses": gen,
+        "offense rating": r,
+        "defense rating": e,
+        "shooting percentage": d
       }
 
       
@@ -39,16 +42,20 @@ var albums = [];
       albumName = albu.options[albu.selectedIndex];
       albums.splice(albu.selectedIndex-1,1);
 
-      var a = document.getElementById("album").value;
-        var art = document.getElementById("artist").value;
-        var gen = document.getElementById("genre").value;
-        var r = document.getElementById("release").value;
+      var a = document.getElementById("team").value;
+        var art = document.getElementById("win").value;
+        var gen = document.getElementById("loss").value;
+        var r = document.getElementById("OR").value;
+        var e = document.getElementById("DR").value;
+        var d = document.getElementById("shoot").value;
 
       var add = {
-        "album": a,
-        "artist": art,
-        "genre": gen,
-        "release": r
+        "team": a,
+        "wins": art,
+        "losses": gen,
+        "offense rating": r,
+        "defense rating": e,
+        "shooting percentage": d
       }
 
       

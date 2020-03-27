@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="javascript.js"></script>
+<link rel = "stylesheet" type="text/css" href = "add.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+<h2>Update Team Form</h2>
+<select id="a">
+    <option id = "sel">Choose Team Form</option>
+</select>
+
+<form>
+    <div class="container">
+      <h3 style="text-align:center">Javascript Form</h3>
+      <label for="uname"><b>Team</b></label>
+      <input type="text" placeholder="Teams" name="team" id = "team" required>
+
+      <label for="psw"><b>Wins</b></label>
+      <input type="text" placeholder="Win" name="win" id ="win" required>
+
+      <label for="psw"><b>Losses</b></label>
+      <input type="text" placeholder="Loss" name="loss" id ="loss" required>
+
+      <label for="eml"><b>Offense Rating</b></label>
+      <input type="text" placeholder="Offense Rating" name="OR" id = "OR" required>
+
+      <label for="eml"><b>Defense Rating</b></label>
+      <input type="text" placeholder="Defense Rating" name="DR" id = "DR" required>
+
+      <label for="eml"><b>Shooting Percentage</b></label>
+      <input type="text" placeholder="Shooting Percentage" name="shoot" id = "shoot" required>
+
+      <button type="button" value = "commit" onclick="up();location.href = 'index.html';">Update</button>
+    </div>
+  </form>
+
+
+  <script>
+    var select = document.getElementById("a");
+    var options = JSON.parse(localStorage.getItem("myAlbums"));
+    for(var i = 0; i < options.length; i++) {
+        var opt = options[i];
+        var el = document.createElement("option");
+        el.textContent = opt.album;
+        el.value = opt;
+        select.appendChild(el);
+    }
+
+    
+  </script>
+
+
+</body>
+</html>
