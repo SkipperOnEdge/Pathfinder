@@ -1,10 +1,5 @@
 var albums = [];
-<<<<<<< HEAD
   
-=======
-
-
->>>>>>> 77254d53ab52009fab9afe26ac0a7865bd581d2d
     function createAlbum(){
 
       albums = JSON.parse(localStorage.getItem("myAlbums"));
