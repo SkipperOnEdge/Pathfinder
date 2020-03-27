@@ -1,5 +1,10 @@
 var albums = [];
+<<<<<<< HEAD
   
+=======
+
+
+>>>>>>> 77254d53ab52009fab9afe26ac0a7865bd581d2d
     function createAlbum(){
 
       albums = JSON.parse(localStorage.getItem("myAlbums"));
@@ -20,7 +25,7 @@ var albums = [];
         "shooting percentage": d
       }
 
-      
+
       albums.push(add);
       console.log(albums);
       localStorage.setItem("myAlbums",JSON.stringify(albums));
@@ -58,7 +63,7 @@ var albums = [];
         "shooting percentage": d
       }
 
-      
+
       albums.push(add);
       console.log(albums);
       localStorage.setItem("myAlbums",JSON.stringify(albums));
@@ -66,7 +71,7 @@ var albums = [];
 
     function ret() {
       albums = JSON.parse(localStorage.getItem("myAlbums"));
-      
+
       for(var i = 0;i<albums.length;i++){
 
         document.write(JSON.stringify(albums[i],null,2));
