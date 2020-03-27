@@ -59,8 +59,10 @@ var albums = [];
 
     function ret() {
       albums = JSON.parse(localStorage.getItem("myAlbums"));
-      albu = document.getElementById("a");
-      albumName = albu.options[albu.selectedIndex];
+      
+      for(var i = 0;i<albums.length;i++){
 
-      document.write(JSON.stringify(albums[albu.selectedIndex-1],null,2));
+        document.write(JSON.stringify(albums[i],null,2));
+        document.write("<br><br>");
+      }
     }
