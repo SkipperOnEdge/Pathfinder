@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="javascript.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+<h2>Delete Album</h2>
+<select id="a">
+    <option id = "sel">Choose Album</option>
+</select>
+
+<button type="button" onclick="del()">delete</button>
+
+  <script>
+    var select = document.getElementById("a");
+    var options = JSON.parse(localStorage.getItem("myAlbums"));
+    for(var i = 0; i < options.length; i++) {
+        var opt = options[i];
+        var el = document.createElement("option");
+        el.textContent = opt.album;
+        el.value = opt;
+        select.appendChild(el);
+    }
+
+    
+  </script>
+
+
+</body>
+</html>
