@@ -27,7 +27,7 @@
 		var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 		var color = Chart.helpers.color;
 		var barChartData = {
-			labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+			labels: ['Offensive Power Rating', 'Defensive Power Rating', 'Matches Won', 'Matches Lost', 'Win/Loss Ratio', 'Accuracy Rating', 'Average Endgame Points'],
 			datasets: [{
 				label: 'Dataset 1',
 				backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
@@ -110,24 +110,24 @@
 			window.myBar.update();
 		});
 
-		document.getElementById('addData').addEventListener('click', function() {
-			if (barChartData.datasets.length > 0) {
-				var month = MONTHS[barChartData.labels.length % MONTHS.length];
-				barChartData.labels.push(month);
-
-				for (var index = 0; index < barChartData.datasets.length; ++index) {
-					// window.myBar.addData(randomScalingFactor(), index);
-					barChartData.datasets[index].data.push(randomScalingFactor());
-				}
-
-				window.myBar.update();
-			}
-		});
-
-		document.getElementById('removeDataset').addEventListener('click', function() {
-			barChartData.datasets.pop();
-			window.myBar.update();
-		});
+		// document.getElementById('addData').addEventListener('click', function() {
+		// 	if (barChartData.datasets.length > 0) {
+		// 		var month = MONTHS[barChartData.labels.length % MONTHS.length];
+		// 		barChartData.labels.push(month);
+		//
+		// 		for (var index = 0; index < barChartData.datasets.length; ++index) {
+		// 			// window.myBar.addData(randomScalingFactor(), index);
+		// 			barChartData.datasets[index].data.push(randomScalingFactor());
+		// 		}
+		//
+		// 		window.myBar.update();
+		// 	}
+		// });
+		//
+		// document.getElementById('removeDataset').addEventListener('click', function() {
+		// 	barChartData.datasets.pop();
+		// 	window.myBar.update();
+		// });
 
 		document.getElementById('removeData').addEventListener('click', function() {
 			barChartData.labels.splice(-1, 1); // remove the label first
