@@ -26,6 +26,12 @@
 	<script>
 		var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 		var color = Chart.helpers.color;
+		var dats = []
+		var albums = JSON.parse(localStorage.getItem("myAlbums"));
+		for(int i = 0; i< albums.length; i++)
+		{
+			
+		}
 		var barChartData = {
 			labels: ['Wins', 'Losses', 'Offensive Rating', 'Defensive Rating', 'Accuracy Rating'],
 			datasets: [{
