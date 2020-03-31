@@ -9,6 +9,8 @@
 <body>
     <button type = "button" onclick="window.location.href='index.html'">Home</button>
     <canvas id="bar-chart" width="800" height="450"></canvas>
+    <p id = "testingGround">REE
+    </p>
 </body>
 
 
@@ -21,7 +23,7 @@ new Chart(document.getElementById("bar-chart"), {
         {
           label: "Population (millions)",
           backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
-          data: [2478,5267,734,784,433]
+          data: getDataGivenTeam(0)
         }
       ]
     },
@@ -33,6 +35,20 @@ new Chart(document.getElementById("bar-chart"), {
       }
     }
 });
+
+function getDataGivenTeam(pos){
+  var teams = JSON.parse(localStorage.getItem("myAlbums"));
+  
+  dat = [5];
+
+  dat[0] = teams[1];
+  dat[1] = teams[2];
+  dat[2] = teams[3];
+  dat[3] = teams[4];
+  dat[4] = teams[5];
+  document.getElementById("testingGround").innerHTML = dat[5];
+  return dat;
+}
 </script>
 
 
