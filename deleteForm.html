@@ -10,7 +10,7 @@
 
 <h2>Delete Team Form</h2>
 <select id="a">
-    <option id = "sel">Choose Album</option>
+    <option id = "sel">Choose Team</option>
 </select>
 
 <button type="button" onclick="del();location.href = 'index.html';">delete</button>
@@ -21,7 +21,7 @@
     for(var i = 0; i < options.length; i++) {
         var opt = options[i];
         var el = document.createElement("option");
-        el.textContent = opt.album;
+        el.textContent = opt.team;
         el.value = opt;
         select.appendChild(el);
     }
