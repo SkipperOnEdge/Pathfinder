@@ -18,30 +18,32 @@
 	<div id="container" style="width: 75%;">
 		<canvas id="canvas"></canvas>
 	</div>
+	<p id = "test">asdasd</p>
 	<button id="randomizeData">Randomize Data</button>
 	<button id="addDataset">Add Dataset</button>
 	<button id="removeDataset">Remove Dataset</button>
-	<button id="addData">Add Data</button>
-	<button id="removeData">Remove Data</button>
+	<button id="tester" onclick = "test()">TEST</button>
+
+
 	<script>
+
+
+		
 		var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 		var color = Chart.helpers.color;
+		var dats = []
+		var albums = JSON.parse(localStorage.getItem("myAlbums"));
+		
+		
+		
 		var barChartData = {
-			labels: ['Offensive Power Rating', 'Defensive Power Rating', 'Matches Won', 'Matches Lost', 'Win/Loss Ratio', 'Accuracy Rating', 'Average Endgame Points'],
+			labels: ['Wins', 'Losses', 'Offensive Rating', 'Defensive Rating', 'Accuracy Rating'],
 			datasets: [{
 				label: 'Dataset 1',
 				backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
 				borderColor: window.chartColors.red,
 				borderWidth: 1,
-				data: [
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor(),
-					randomScalingFactor()
-				]
+				data: [90,90,90,90,90,90,10]
 			}, {
 				label: 'Dataset 2',
 				backgroundColor: color(window.chartColors.blue).alpha(0.5).rgbString(),
@@ -61,6 +63,7 @@
 		};
 
 		window.onload = function() {
+			
 			var ctx = document.getElementById('canvas').getContext('2d');
 			window.myBar = new Chart(ctx, {
 				type: 'bar',
@@ -75,7 +78,11 @@
 						text: 'Chart.js Bar Chart'
 					}
 				}
-			});
+			}
+
+
+
+		);
 
 		};
 
@@ -110,34 +117,6 @@
 			window.myBar.update();
 		});
 
-		// document.getElementById('addData').addEventListener('click', function() {
-		// 	if (barChartData.datasets.length > 0) {
-		// 		var month = MONTHS[barChartData.labels.length % MONTHS.length];
-		// 		barChartData.labels.push(month);
-		//
-		// 		for (var index = 0; index < barChartData.datasets.length; ++index) {
-		// 			// window.myBar.addData(randomScalingFactor(), index);
-		// 			barChartData.datasets[index].data.push(randomScalingFactor());
-		// 		}
-		//
-		// 		window.myBar.update();
-		// 	}
-		// });
-		//
-		// document.getElementById('removeDataset').addEventListener('click', function() {
-		// 	barChartData.datasets.pop();
-		// 	window.myBar.update();
-		// });
-
-		document.getElementById('removeData').addEventListener('click', function() {
-			barChartData.labels.splice(-1, 1); // remove the label first
-
-			barChartData.datasets.forEach(function(dataset) {
-				dataset.data.pop();
-			});
-
-			window.myBar.update();
-		});
 	</script>
 </body>
 
