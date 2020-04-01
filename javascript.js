@@ -74,7 +74,6 @@ var albums = [];
       document.getElementById("retrievePage").innerHTML=ret;
     }
 
-<<<<<<< HEAD
     function getDataArray()
     {
       albums = JSON.parse(localStorage.getItem("myAlbums"));
@@ -106,6 +105,3 @@ var albums = [];
       document.write(data.toString());
 
     }
-=======
-
->>>>>>> 4b0dfc02daf0547e38e8a5fbcc9739d65036ee53
