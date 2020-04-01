@@ -9,29 +9,26 @@
 <body>
     <button type = "button" onclick="window.location.href='index.html'">Home</button>
     <canvas id="bar-chart" width="800" height="450"></canvas>
-    <p id = "testingGround">REE
+    <p id = "abc">REE
     </p>
 </body>
 
 
 <script>
+  var test = getDataSets();
+
+  // var test2 = tester();
 new Chart(document.getElementById("bar-chart"), {
     type: 'bar',
     data: {
       labels: ['Wins', 'Losses', 'Offensive Rating', 'Defensive Rating', 'Accuracy Rating'],
-      datasets: [
-        {
-          label: "Population (millions)",
-          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
-          data: getDataGivenTeam(0)
-        }
-      ]
+      datasets: test
     },
     options: {
       legend: { display: false },
       title: {
         display: true,
-        text: 'Predicted world population (millions) in 2050'
+        text: 'Scouting Data'
       }
     }
 });
@@ -46,12 +43,28 @@ function getDataGivenTeam(pos){
   dat[2] = team.offenseRating;
   dat[3] = team.defenseRating;
   dat[4] = team.shootingPercentage;
-  // document.getElementById("testingGround").innerHTML = dat[0];
-  document.getElementById("testingGround").innerHTML = JSON.stringify(team);
+  document.getElementById("abc").innerHTML = '';
+  var randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
 
-
-  return dat;
+  var allDat = {
+    label: team.team,
+    backgroundColor: [randomColor,randomColor,randomColor,randomColor,randomColor],
+    data: dat
+  }
+  return allDat;
 }
+
+
+function getDataSets()
+{
+  var allSets = [];
+  for(var i = 0; i < JSON.parse(localStorage.getItem("myAlbums")).length; i++)
+  {
+    allSets.push(getDataGivenTeam(i));
+  }
+  return allSets;
+}
+
 </script>
 
 
