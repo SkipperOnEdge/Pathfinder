@@ -66,42 +66,12 @@ var albums = [];
 
     function ret() {
       albums = JSON.parse(localStorage.getItem("myAlbums"));
-
+      var ret = '';
       for(var i = 0;i<albums.length;i++){
 
-        document.write(JSON.stringify(albums[i],null,2));
-        document.write("<br><br>");
+        ret = ret + JSON.stringify(albums[i],null,2) + "<br><br>";
       }
+      document.getElementById("retrievePage").innerHTML=ret;
     }
 
-    // function getDataArray()
-    // {
-    //   albums = JSON.parse(localStorage.getItem("myAlbums"));
-    //   data = Array(2);
-    //   for(var r = 0; r < albums.length; r++){
-    //     for(var c = 0; c < albums[r].length; c++){
-    //       if(c==0) {
-    //         data.push(albums[r].getElementById("team"));
-    //         document.write(albums[r].getElementById("team"));
-    //       }
-    //       if(c==1) {
-    //         data.push(albums[r].getElementById("win"));
-    //       }
-    //       if(c==2) {
-    //         data.push(albums[r].getElementById("loss"));
-    //       }
-    //       if(c==3) {
-    //         data.push(albums[r].getElementById("OR"));
-    //       }
-    //       if(c==4) {
-    //         data.push(albums[r].getElementById("DR"));
-    //       }
-    //       if(c==5) {
-    //         data.push(albums[r].getElementById("shoot"));
-    //       }
-    //     }
-    //   }
-    //   document.write(JSON.stringify())
-    //   document.write(data.toString());
 
-    // }
