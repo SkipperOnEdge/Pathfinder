@@ -38,15 +38,18 @@ new Chart(document.getElementById("bar-chart"), {
 
 function getDataGivenTeam(pos){
   var teams = JSON.parse(localStorage.getItem("myAlbums"));
-  
+  var team = teams[pos];
   dat = [5];
 
-  dat[0] = teams[1];
-  dat[1] = teams[2];
-  dat[2] = teams[3];
-  dat[3] = teams[4];
-  dat[4] = teams[5];
-  document.getElementById("testingGround").innerHTML = dat[5];
+  dat[0] = team.wins;
+  dat[1] = team.losses;
+  dat[2] = team.offenserating;
+  dat[3] = team.defensive_rating;
+  dat[4] = team.shooting_percentage;
+  // document.getElementById("testingGround").innerHTML = dat[0];
+  document.getElementById("testingGround").innerHTML = JSON.stringify(team);
+
+
   return dat;
 }
 </script>
