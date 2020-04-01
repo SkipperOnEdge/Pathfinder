@@ -1,6 +1,6 @@
 var albums = [];
   
-    function createAlbum(){
+    function createForm(){
 
       albums = JSON.parse(localStorage.getItem("myAlbums"));
 
