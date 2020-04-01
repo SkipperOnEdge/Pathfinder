@@ -66,14 +66,15 @@ var albums = [];
 
     function ret() {
       albums = JSON.parse(localStorage.getItem("myAlbums"));
-
+      var ret = '';
       for(var i = 0;i<albums.length;i++){
 
-        document.write(JSON.stringify(albums[i],null,2));
-        document.write("<br><br>");
+        ret = ret + JSON.stringify(albums[i],null,2) + "<br><br>";
       }
+      document.getElementById("retrievePage").innerHTML=ret;
     }
 
+<<<<<<< HEAD
     function getDataArray()
     {
       albums = JSON.parse(localStorage.getItem("myAlbums"));
@@ -105,3 +106,6 @@ var albums = [];
       document.write(data.toString());
 
     }
+=======
+
+>>>>>>> 4b0dfc02daf0547e38e8a5fbcc9739d65036ee53
