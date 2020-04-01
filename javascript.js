@@ -1,10 +1,14 @@
-var albums = [];
+var teamList = [];
   
     function createForm(){
 
-      albums = JSON.parse(localStorage.getItem("myAlbums"));
+      teamList = JSON.parse(localStorage.getItem("myTeams"));
 
-        var a = document.getElementById("team").value;
+      if(teamList === null)
+        teamList = [];
+
+  
+      var a = document.getElementById("team").value;
         var art = document.getElementById("win").value;
         var gen = document.getElementById("loss").value;
         var r = document.getElementById("OR").value;
@@ -15,32 +19,32 @@ var albums = [];
         "team": a,
         "wins": art,
         "losses": gen,
-        "offense rating": r,
-        "defense rating": e,
-        "shooting percentage": d
+        "offenseRating": r,
+        "defenseRating": e,
+        "shootingPercentage": d
       }
 
 
-      albums.push(add);
-      console.log(albums);
-      localStorage.setItem("myAlbums",JSON.stringify(albums));
+      teamList.push(add);
+      console.log(teamList);
+      localStorage.setItem("myTeams",JSON.stringify(teamList));
     }
 
     function del() {
-      albums = JSON.parse(localStorage.getItem("myAlbums"));
-      albu = document.getElementById("a");
-      albumName = albu.options[albu.selectedIndex];
-      albums.splice(albu.selectedIndex-1,1);
-      localStorage.setItem("myAlbums", JSON.stringify(albums));
-      console.log(albums);
-      console.log(albumName);
+      teamList = JSON.parse(localStorage.getItem("myTeams"));
+      tea = document.getElementById("a");
+      te = tea.options[tea.selectedIndex];
+      teamList.splice(tea.selectedIndex-1,1);
+      localStorage.setItem("myTeams", JSON.stringify(teamList));
+      console.log(teamList);
+      console.log(te);
     }
 
     function up() {
-      albums = JSON.parse(localStorage.getItem("myAlbums"));
-      albu = document.getElementById("a");
-      albumName = albu.options[albu.selectedIndex];
-      albums.splice(albu.selectedIndex-1,1);
+      teamList = JSON.parse(localStorage.getItem("myTeams"));
+      tea = document.getElementById("a");
+      te = tea.options[tea.selectedIndex];
+      teamList.splice(tea.selectedIndex-1,1);
 
       var a = document.getElementById("team").value;
         var art = document.getElementById("win").value;
@@ -53,51 +57,51 @@ var albums = [];
         "team": a,
         "wins": art,
         "losses": gen,
-        "offense rating": r,
-        "defense rating": e,
-        "shooting percentage": d
+        "offenseRating": r,
+        "defenseRating": e,
+        "shootingPercentage": d
       }
 
 
-      albums.push(add);
-      console.log(albums);
-      localStorage.setItem("myAlbums",JSON.stringify(albums));
+      teamList.push(add);
+      console.log(teamList);
+      localStorage.setItem("myTeams",JSON.stringify(teamList));
     }
 
     function ret() {
-      albums = JSON.parse(localStorage.getItem("myAlbums"));
+      teamList = JSON.parse(localStorage.getItem("myTeams"));
       var ret = '';
-      for(var i = 0;i<albums.length;i++){
+      for(var i = 0;i<teamList.length;i++){
 
-        ret = ret + JSON.stringify(albums[i],null,2) + "<br><br>";
+        ret = ret + JSON.stringify(teamList[i],null,2) + "<br><br>";
       }
       document.getElementById("retrievePage").innerHTML=ret;
     }
 
     function getDataArray()
     {
-      albums = JSON.parse(localStorage.getItem("myAlbums"));
+      teamList = JSON.parse(localStorage.getItem("myTeams"));
       data = Array(2);
-      for(var r = 0; r < albums.length; r++){
-        for(var c = 0; c < albums[r].length; c++){
+      for(var r = 0; r < teamList.length; r++){
+        for(var c = 0; c < teamList[r].length; c++){
           if(c==0) {
-            data.push(albums[r].getElementById("team"));
-            document.write(albums[r].getElementById("team"));
+            data.push(teamList[r].getElementById("team"));
+            document.write(teamList[r].getElementById("team"));
           }
           if(c==1) {
-            data.push(albums[r].getElementById("win"));
+            data.push(teamList[r].getElementById("win"));
           }
           if(c==2) {
-            data.push(albums[r].getElementById("loss"));
+            data.push(teamList[r].getElementById("loss"));
           }
           if(c==3) {
-            data.push(albums[r].getElementById("OR"));
+            data.push(teamList[r].getElementById("OR"));
           }
           if(c==4) {
-            data.push(albums[r].getElementById("DR"));
+            data.push(teamList[r].getElementById("DR"));
           }
           if(c==5) {
-            data.push(albums[r].getElementById("shoot"));
+            data.push(teamList[r].getElementById("shoot"));
           }
         }
       }

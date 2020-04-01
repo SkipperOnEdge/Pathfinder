@@ -10,7 +10,7 @@
 
 
 <body>
-    <button type = "button" style = "background-color: cornflowerblue;" onclick="window.location.href='index.html'">Home</button>
+    <button type = "button" style = "background-color: cornflowerblue;"onclick="window.location.href='index.html'">Home</button>
     <canvas id="bar-chart" width="800" height="450"></canvas>
     <p id = "abc">REE
     </p>
@@ -37,7 +37,7 @@ new Chart(document.getElementById("bar-chart"), {
 });
 
 function getDataGivenTeam(pos){
-  var teams = JSON.parse(localStorage.getItem("myAlbums"));
+  var teams = JSON.parse(localStorage.getItem("myTeams"));
   var team = teams[pos];
   dat = [5];
 
@@ -61,7 +61,7 @@ function getDataGivenTeam(pos){
 function getDataSets()
 {
   var allSets = [];
-  for(var i = 0; i < JSON.parse(localStorage.getItem("myAlbums")).length; i++)
+  for(var i = 0; i < JSON.parse(localStorage.getItem("myTeams")).length; i++)
   {
     allSets.push(getDataGivenTeam(i));
   }
