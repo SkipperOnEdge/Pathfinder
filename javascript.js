@@ -41,6 +41,7 @@ var teamList = [];
     }
 
     function up() {
+
       teamList = JSON.parse(localStorage.getItem("myTeams"));
       tea = document.getElementById("a");
       te = tea.options[tea.selectedIndex];
@@ -52,6 +53,8 @@ var teamList = [];
         var r = document.getElementById("OR").value;
         var e = document.getElementById("DR").value;
         var d = document.getElementById("shoot").value;
+
+      
 
       var add = {
         "team": a,
