@@ -53,9 +53,6 @@ var teamList = [];
         var r = document.getElementById("OR").value;
         var e = document.getElementById("DR").value;
         var d = document.getElementById("shoot").value;
-
-      
-
       var add = {
         "team": a,
         "wins": art,
@@ -64,51 +61,37 @@ var teamList = [];
         "defenseRating": e,
         "shootingPercentage": d
       }
-
-
       teamList.push(add);
       console.log(teamList);
       localStorage.setItem("myTeams",JSON.stringify(teamList));
     }
-
     function ret() {
       teamList = JSON.parse(localStorage.getItem("myTeams"));
       var ret = '';
       for(var i = 0;i<teamList.length;i++){
 
-        ret = ret + JSON.stringify(teamList[i],null,2) + "<br><br>";
-      }
-      document.getElementById("retrievePage").innerHTML=ret;
-    }
-
-    function getDataArray()
-    {
+        ret = ret + JSON.stringify(teamList[i],null,2) + "<br><br>";}
+      document.getElementById("retrievePage").innerHTML=ret; }
+    function getDataArray(){
       teamList = JSON.parse(localStorage.getItem("myTeams"));
       data = Array(2);
       for(var r = 0; r < teamList.length; r++){
         for(var c = 0; c < teamList[r].length; c++){
           if(c==0) {
             data.push(teamList[r].getElementById("team"));
-            document.write(teamList[r].getElementById("team"));
-          }
+            document.write(teamList[r].getElementById("team"));}
           if(c==1) {
-            data.push(teamList[r].getElementById("win"));
-          }
+            data.push(teamList[r].getElementById("win"));}
           if(c==2) {
-            data.push(teamList[r].getElementById("loss"));
-          }
+            data.push(teamList[r].getElementById("loss"));}
           if(c==3) {
-            data.push(teamList[r].getElementById("OR"));
-          }
+            data.push(teamList[r].getElementById("OR"));}
           if(c==4) {
-            data.push(teamList[r].getElementById("DR"));
-          }
+            data.push(teamList[r].getElementById("DR"));}
           if(c==5) {
-            data.push(teamList[r].getElementById("shoot"));
-          }
+            data.push(teamList[r].getElementById("shoot"));}
         }
       }
       document.write(JSON.stringify())
       document.write(data.toString());
-
     }
